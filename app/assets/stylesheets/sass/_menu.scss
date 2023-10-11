@@ -5,8 +5,11 @@
   position: fixed;
   top: 0;
   width: 100%;
-  z-index: 999;
+  
+  margin-bottom: 20px;
 }
+
+
 
 #menuToggle {
   position: relative;
@@ -98,8 +101,37 @@
   transform: none;
 }
 
+.flex-box {
+  display: flex;
+  flex-wrap: wrap;
+  transform: scale(0.5);
+}
 
-.icon{
-  display: inline-block;
-  margin: 20px;
+.flex-box img {
+  vertical-align: top;
+}
+
+.thumnail-left-box {
+  width: 100%;
+  padding: 20px;
+}
+
+
+.thumnail-right-box {
+  width: 30%;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.thumnail-right-box li {
+  display: flex;
+  flex-wrap: wrap;
+  width: 40%;
+  margin: 0 0 0 auto;
+}
+
+.thumnail-right-box li img {
+  width: 100%;
+  margin: 0 0 auto;
 }

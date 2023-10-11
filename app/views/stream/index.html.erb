@@ -1,34 +1,38 @@
-<html>
-
-  <body> 
-      <div class="main-container">
-          <h1>配信一覧</h1>
-                  <%= image_tag 'user-profile.png', :class=>"icon", :alt => 'プロフィール画像' %>
-                  <%= image_tag 'user-profile.png', :alt => 'プロフィール画像' %>
-
-      </div>
-
-
-      <!-- アラートメッセージの追加 -->
-      <% if notice %>
-        <div class="alert alert-success" role="alert">
-          <%= notice %>
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>配信一覧</title>
+    <link rel="stylesheet" href="/css/app.css"> <!-- Add your CSS file here -->
+</head>
+<body>
+    <h1>配信一覧</h1>
+    <div class="flex-box">
+        <div class="thumnail-left-box">
+            <% 4.times do %>
+                <%= image_tag 'user-profile.png', alt: 'プロフィール画像' %>
+            <% end %>
         </div>
-      <% end %>
-      <% if alert %>
-        <div class="alert alert-danger" role="alert">
-          <%= alert %>
-        </div>
-      <% end %>
-
-      <div class="bg-white text-dark">
-        <%= yield %>
-      </div>
     </div>
 
-    <!-- Javascript追加 -->
+    <!-- Alert Messages -->
+    <% if notice %>
+        <div class="alert alert-success" role="alert">
+            <%= notice %>
+        </div>
+    <% end %>
+    <% if alert %>
+        <div class="alert alert-danger" role="alert">
+            <%= alert %>
+        </div>
+    <% end %>
+
+    <div class="content-box bg-white text-dark">
+        <%= yield %>
+    </div>
+
+    <!-- JavaScript -->
     <script src="<%= mix('/js/app.js') %>"></script>
-  </body>
+</body>
 </html>
-
-
