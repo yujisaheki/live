@@ -6,5 +6,6 @@ Rails.application.routes.draw do
 
   #StreamController
   get 'stream/index', to: 'stream#index', as: 'index_stream'
+  get 'stream/detail', to: 'stream#detail', as: 'detail_stream'
 
 end

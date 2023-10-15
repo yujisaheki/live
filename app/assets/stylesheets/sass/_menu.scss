@@ -104,7 +104,6 @@
 .flex-box {
   display: flex;
   flex-wrap: wrap;
-  transform: scale(0.5);
 }
 
 .flex-box img {
@@ -113,7 +112,11 @@
 
 .thumnail-left-box {
   width: 100%;
-  padding: 20px;
+  padding: 50px;
+}
+
+.stream-box{
+  padding: 50px;
 }
 
 
