@@ -19,6 +19,10 @@ var options = {
   audienceLatency: 2
 };
 
+var urlParams = new URL(location.href).searchParams;
+console.log('URL Parameters:', urlParams);
+console.log('Options after reading URL parameters:', options);
+
 // the demo can auto join channel with params in url
 $(() => {
   var urlParams = new URL(location.href).searchParams;
@@ -36,6 +40,7 @@ $(() => {
 });
 $("#host-join").click(function (e) {
   options.role = "host";
+  console.log('Host Join button clicked. Options:', options);
 });
 $("#lowLatency").click(function (e) {
   options.role = "audience";
@@ -51,6 +56,7 @@ $("#join-form").submit(async function (e) {
   e.preventDefault();
   $("#host-join").attr("disabled", true);
   $("#audience-join").attr("disabled", true);
+  console.log('join ===============-')
   try {
     options.channel = $("#channel").val();
     options.uid = Number($("#uid").val());
@@ -77,6 +83,7 @@ $("#leave").click(function (e) {
 });
 async function join() {
   // create Agora client
+  console.log('Join function triggered with options:', options);
 
   if (options.role === "audience") {
     client.setClientRole(options.role, {
